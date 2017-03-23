@@ -5,8 +5,8 @@ function getPathSegments(path) {
 	const pathArr = path.split('.');
 	const parts = [];
 
-	for (let i = 0; i < pathArr.length; i++) {
-		let p = pathArr[i];
+	for (var i = 0; i < pathArr.length; i++) {
+		var p = pathArr[i];
 
 		while (p[p.length - 1] === '\\' && pathArr[i + 1] !== undefined) {
 			p = p.slice(0, -1) + '.';
@@ -27,7 +27,7 @@ module.exports = {
 
 		const pathArr = getPathSegments(path);
 
-		for (let i = 0; i < pathArr.length; i++) {
+		for (var i = 0; i < pathArr.length; i++) {
 			if (!Object.prototype.propertyIsEnumerable.call(obj, pathArr[i])) {
 				return value;
 			}
@@ -58,7 +58,7 @@ module.exports = {
 
 		const pathArr = getPathSegments(path);
 
-		for (let i = 0; i < pathArr.length; i++) {
+		for (var i = 0; i < pathArr.length; i++) {
 			const p = pathArr[i];
 
 			if (!isObj(obj[p])) {
@@ -80,7 +80,7 @@ module.exports = {
 
 		const pathArr = getPathSegments(path);
 
-		for (let i = 0; i < pathArr.length; i++) {
+		for (var i = 0; i < pathArr.length; i++) {
 			const p = pathArr[i];
 
 			if (i === pathArr.length - 1) {
@@ -103,7 +103,7 @@ module.exports = {
 
 		const pathArr = getPathSegments(path);
 
-		for (let i = 0; i < pathArr.length; i++) {
+		for (var i = 0; i < pathArr.length; i++) {
 			if (isObj(obj)) {
 				if (!(pathArr[i] in obj)) {
 					return false;
